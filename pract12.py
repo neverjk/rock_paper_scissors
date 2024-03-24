@@ -1,3 +1,6 @@
+# app.py
+
+
 def sum_numbers(n):
     """
     Приймає одне додатне ціле число та повертає суму цілих чисел від нуля до вхідного параметра, інакше нуль.
@@ -12,14 +15,13 @@ def sum_numbers(n):
         return 0
 
     result = 0
-    i = 0
-    while i <= n:
+    for i in range(n + 1):
         result += i
-        i += 1
 
     return result
 
 
+# Приклад використання:
 num = int(input("Введіть ціле додатне число: "))
 result = sum_numbers(num)
 print(f"Сума цілих чисел від 0 до {num}: {result}")
