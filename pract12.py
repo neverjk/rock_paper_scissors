@@ -6,15 +6,20 @@ def sum_numbers(n):
     n (int): Вхідне ціле число.
 
     Повертає:
-    int: Сума цілих чисел від нуля до n.
+    int: Сума цілих чисел від нуля до n або нуль, якщо n від'ємне.
     """
-    if n < 0:
+    try:
+        if n < 0:
+            return 0
+
+        return sum(range(n + 1))
+    except TypeError:
         return 0
 
-    return sum(range(n + 1))
 
-
-# Приклад використання:
-num = int(input("Введіть ціле додатне число: "))
-result = sum_numbers(num)
-print(f"Сума цілих чисел від 0 до {num}: {result}")
+try:
+    num = int(input("Введіть ціле додатне число: "))
+    result = sum_numbers(num)
+    print(f"Сума цілих чисел від 0 до {num}: {result}")
+except ValueError:
+    print("Введено некоректне значення. Будь ласка, введіть ціле додатне число.")
