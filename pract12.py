@@ -7,6 +7,14 @@ def sum_numbers(n):
 
     Повертає:
     int: Сума цілих чисел від нуля до n або нуль, якщо n від'ємне.
+
+    Приклади:
+    >>> sum_numbers(5)
+    15
+    >>> sum_numbers(0)
+    0
+    >>> sum_numbers(-3)
+    0
     """
     try:
         if n < 0:
@@ -17,9 +25,7 @@ def sum_numbers(n):
         return 0
 
 
-try:
-    num = int(input("Введіть ціле додатне число: "))
-    result = sum_numbers(num)
-    print(f"Сума цілих чисел від 0 до {num}: {result}")
-except ValueError:
-    print("Введено некоректне значення. Будь ласка, введіть ціле додатне число.")
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()
